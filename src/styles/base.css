@@ -1,11 +1,5 @@
 /* basic site style */
 
-:lang(ar) {
-	* {
-		letter-spacing: 0 !important;
-	}
-}
-
 :root {
 	@media (prefers-color-scheme: dark) {
 		--color-theme: #ef4d1a;
@@ -25,10 +19,12 @@
 	--sp-l: 64px;
 	--sp-m: 32px;
 	--sp-s: 16px;
+	--sp-xs: 8px;
 	@media (width < 480px) {
 		--sp-l: 48px;
 		--sp-m: 16px;
 		--sp-s: 8px;
+		--sp-xs: 4px;
 	}
 
 	--english-font: "Noto Sans", "Robot", "Avenir Next", "Avenir",

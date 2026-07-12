@@ -53,10 +53,7 @@ const localeDescription = description || t(SITE_DESCRIPTION);
     <link href={`/${locale}/rss.xml`} title="Feed" rel="alternate" type="application/rss+xml" />
 
     <!-- icon -->
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <link rel="icon alternate" sizes="64x64" type="image/png" href="/favicon.png">
-    <link rel="icon" sizes="192x192" href="/android-chrome.png" />
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="icon alternate" sizes="32x32" type="image/png" href="/favicon.png">
     <meta name="color-scheme" content="light dark" />
 
     <!-- OGP -->
@@ -87,7 +84,7 @@ const localeDescription = description || t(SITE_DESCRIPTION);
     <LocaleSuggest />
     <Header />
 
-    <main class="l-main l-content">
+    <main class="wrapper">
       <slot />
     </main>
 

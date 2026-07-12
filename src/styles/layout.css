@@ -1,14 +1,6 @@
 /* define the layout and structure of the entire page */
-
-.l-header {
-}
-
-.l-main {
-	margin-block-start: var(--sp-l);
-}
-
-.l-content {
-	max-inline-size: 800px;
+.wrapper {
+	max-inline-size: 1200px;
 	padding-inline: var(--sp-m);
 	margin-inline: auto;
 }

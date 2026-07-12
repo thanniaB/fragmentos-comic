@@ -1,13 +1,10 @@
 ---
 // Header & Navigation UI displayed on each page.
-
+import {LATEST_CHAPTER} from "@/consts";
 import LocaleSelect from "@/components/i18n/LocaleSelect.astro";
-import { Image } from "astro:assets";
 import { useTranslations, type Lang } from "@/i18n";
 import { getRelativeLocaleUrl } from "astro:i18n";
 const t = useTranslations(Astro.currentLocale as Lang);
-
-import AstroImage from "@/assets/astro-logo.svg";
 
 const locale = Astro.currentLocale as Lang;
 
@@ -15,65 +12,26 @@ const isActive = (path: string) =>
   getRelativeLocaleUrl(locale, path) === Astro.url.pathname;
 ---
 
-<header class="l-header">
+<header>
   <h1 dir="ltr">
     <a href={getRelativeLocaleUrl(locale, "/")}>
-      <Image src={AstroImage} alt="Astro" />
-      i18n Starter
+      {
+        t({
+          en: "Thorns of a Dragon",
+          es: "Fragmentos de Dragón",
+        })
+      }
     </a>
   </h1>
 
-  <LocaleSelect />
-
-  <nav class="l-content">
+  <nav>
     <ul>
       <li>
         <a
-          href={getRelativeLocaleUrl(locale, "/setup")}
-          class={isActive("/setup") ? "active" : null}
+          href={getRelativeLocaleUrl(locale, "/blog/prologue")}
+          class={isActive("/blog/prologue") ? "active" : null}
         >
-          {t({ ja: "設定", en: "Setup", "zh-cn": "设置", ar: "إعداد" })}
-        </a>
-      </li>
-
-      <li>
-        <a
-          href={getRelativeLocaleUrl(locale, "/page")}
-          class={isActive("/page") ? "active" : null}
-        >
-          {
-            t({
-              ja: "ページの追加",
-              en: "Add Page",
-              "zh-cn": "添加页面",
-              ar: "إضافة صفحة",
-            })
-          }
-        </a>
-      </li>
-
-      <li>
-        <a
-          href={getRelativeLocaleUrl(locale, "/feature")}
-          class={isActive("/feature") ? "active" : null}
-        >
-          {
-            t({
-              ja: "その他の機能",
-              en: "Features",
-              "zh-cn": "特性",
-              ar: "الميزات",
-            })
-          }
-        </a>
-      </li>
-
-      <li class="en-only">
-        <a
-          href={getRelativeLocaleUrl(locale, "/monolingual")}
-          class={isActive("/monolingual") ? "active" : null}
-        >
-          Monolingual
+          {t({ es: "Inicio", en: "Start" })}
         </a>
       </li>
 
@@ -82,53 +40,63 @@ const isActive = (path: string) =>
           href={getRelativeLocaleUrl(locale, "/blog")}
           class={isActive("/blog") ? "active" : null}
         >
-          {t({ ja: "ブログ", en: "Blog", "zh-cn": "博客", ar: "مدونة" })}
+          {t({ es: "Capítulos", en: "Chapters" })}
         </a>
       </li>
 
       <li>
         <a
-          href="https://github.com/psephopaiktes/astro-i18n-starter"
-          target="_blank"
+          href={getRelativeLocaleUrl(locale, `/blog/${LATEST_CHAPTER}`)}
+          class={isActive(`/blog/${LATEST_CHAPTER}`) ? "active" : null}
         >
-          GitHub
-          <span class="material-icons-sharp dir">open_in_new</span>
+          {
+            t({
+              es: "Más Reciente",
+              en: "Latest",
+            })
+          }
+        </a>
+      </li>
+
+      <li>
+        <a
+          href={getRelativeLocaleUrl(locale, "/about")}
+          class={isActive("/about") ? "active" : null}
+        >
+          {
+            t({
+              es: "Acerca De",
+              en: "About",
+            })
+          }
         </a>
       </li>
     </ul>
   </nav>
+
+  <LocaleSelect />
 </header>
 
 <style>
-  * {
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-
   header {
-    display: grid;
-    place-items: center;
-    gap: var(--sp-s);
+    display: flex;
+    justify-content: space-around;
+    align-items: baseline;
+    padding: var(--sp-s);
+
+    @media (width < 1100px) {
+      flex-direction: column;
+      align-items: center;
+
+    }
   }
 
   h1 {
-    margin-block-start: var(--sp-l);
-    margin-inline-start: -0.5em;
     font-size: 40px;
     font-family: var(--english-font);
     font-weight: 900;
     @media (width < 480px) {
       font-size: 28px;
-    }
-
-    a {
-      display: flex;
-      align-items: center;
-    }
-    img {
-      width: 6em;
-      position: relative;
-      inset: 0.1em;
     }
   }
 
@@ -137,23 +105,11 @@ const isActive = (path: string) =>
     align-items: center;
     gap: var(--sp-m);
   }
+
   ul {
     display: flex;
     gap: var(--sp-s);
     margin-block-start: var(--sp-s);
-
-    .en-only {
-      position: relative;
-      &:not(:lang(en))::before {
-        content: "EN";
-        position: absolute;
-        inset: -0.4em -0.6em auto auto;
-        font-size: 0.8em;
-        font-weight: 900;
-        color: var(--color-main);
-        opacity: 0.6;
-      }
-    }
 
     a {
       font-size: 1.05rem;

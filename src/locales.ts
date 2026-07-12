@@ -2,7 +2,7 @@
 // Set the languages you want to support on your site.
 // https://astro-i18n-starter.pages.dev/setup/
 
-export const DEFAULT_LOCALE_SETTING: string = "en";
+export const DEFAULT_LOCALE_SETTING: string = "es";
 
 interface LocaleSetting {
 	[key: Lowercase<string>]: {
@@ -17,15 +17,8 @@ export const LOCALES_SETTING: LocaleSetting = {
 		label: "English",
 		lang: "en-US",
 	},
-	ja: {
-		label: "日本語",
-	},
-	"zh-cn": {
-		label: "简体中文",
-		lang: "zh-CN",
-	},
-	ar: {
-		label: "العربية",
-		dir: "rtl",
+	es: {
+		label: "Español",
+		lang: "es-MX"
 	},
 };
