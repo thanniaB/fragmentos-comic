@@ -46,8 +46,8 @@ const isActive = (path: string) =>
 
       <li>
         <a
-          href={getRelativeLocaleUrl(locale, `/blog/${LATEST_CHAPTER}`)}
-          class={isActive(`/blog/${LATEST_CHAPTER}`) ? "active" : null}
+          href={getRelativeLocaleUrl(locale, `/blog/chapter_${LATEST_CHAPTER}`)}
+          class={isActive(`/blog/chapter_${LATEST_CHAPTER}`) ? "active" : null}
         >
           {
             t({

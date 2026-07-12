@@ -1,7 +1,6 @@
 ---
 import { LOCALES, useTranslations, type Lang } from "@/i18n";
 import Layout from "@/layouts/Base.astro";
-import { Image } from "astro:assets";
 import { getCollection } from "astro:content";
 import PageHeadline from "@/components/PageHeadline.astro";
 
@@ -25,7 +24,6 @@ export const getStaticPaths = () =>
 
 <Layout {title}>
   <PageHeadline {title} />
-
   <ul>
     {
       posts.map((post) => {
@@ -33,9 +31,6 @@ export const getStaticPaths = () =>
         return (
           <li>
             <a href={`/${locale}/blog/${id.join("/")}/`}>
-              {post.data.cover && (
-                <Image src={post.data.cover} alt={post.data.title} />
-              )}
               <h2>{post.data.title}</h2>
             </a>
           </li>
@@ -46,20 +41,8 @@ export const getStaticPaths = () =>
 </Layout>
 
 <style>
-  p {
-    margin-block-start: var(--sp-s);
-  }
   ul {
-    margin-block-start: var(--sp-m);
-    display: grid;
-    gap: var(--sp-s);
-    grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr));
-  }
-
-  li {
-    margin-block-end: 1rem;
-    img {
-      border-radius: 6px;
-    }
+    max-width: 800px;
+    margin: var(--sp-s) auto;
   }
 </style>

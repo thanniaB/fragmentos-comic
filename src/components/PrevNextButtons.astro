@@ -1,0 +1,59 @@
+---
+import { LATEST_CHAPTER } from "@/consts";
+import { useTranslations, type Lang } from "@/i18n";
+import { getRelativeLocaleUrl } from "astro:i18n";
+const t = useTranslations(Astro.currentLocale as Lang);
+const locale = Astro.currentLocale as Lang;
+const { chapterNumber } = Astro.props;
+---
+
+<div>
+    <div>
+        {
+            chapterNumber !== 0 && (
+                <a
+                    href={
+                        chapterNumber === 1
+                            ? getRelativeLocaleUrl(locale, "/blog/prologue")
+                            : getRelativeLocaleUrl(
+                                  locale,
+                                  `/blog/chapter_${chapterNumber - 1}`,
+                              )
+                    }
+                >
+                    {t({
+                        en: "Previous",
+                        es: "Anterior",
+                    })}
+                </a>
+            )
+        }
+    </div>
+    <div>
+        {
+            chapterNumber !== LATEST_CHAPTER && (
+                <a
+                    href={getRelativeLocaleUrl(
+                        locale,
+                        `/blog/chapter_${chapterNumber + 1}`,
+                    )}
+                >
+                    {t({
+                        en: "Next",
+                        es: "Siguiente",
+                    })}
+                </a>
+            )
+        }
+    </div>
+</div>
+<style>
+    * {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    & > div:first-of-type {
+        width: 50%;
+    }
+</style>

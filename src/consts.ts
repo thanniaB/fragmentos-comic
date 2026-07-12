@@ -20,4 +20,4 @@ export const NOT_TRANSLATED_CAUTION: string | Multilingual = {
 	es: "Esta página no existe en tu idioma",
 };
 
-export const LATEST_CHAPTER: number = 0;
+export const LATEST_CHAPTER: number = 1;
