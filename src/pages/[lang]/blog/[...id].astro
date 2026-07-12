@@ -32,9 +32,9 @@ const title = post.data.title;
   </header>
 
   {
-    post.data.pages && post.data.pages.map((page) => {
+    post.data.pages && post.data.pages.map((page, index) => {
       return (
-          <Image src={page} alt={post.data.title} class="page" />
+          <Image src={page} alt={`Image for page ${index + 1}`} class="page" />
       )
     })
   }
@@ -48,8 +48,9 @@ const title = post.data.title;
 <style>
   header {
     text-align: center;
-    border-block-end: 1px solid var(--color-theme);
+    border-block-end: 1px solid var(--color-accent);
     padding-block-end: var(--sp-m);
+    margin-block-end: var(--sp-s);
     h1 {
       color: var(--color-theme);
       font-size: 1.8rem;
