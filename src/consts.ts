@@ -9,8 +9,8 @@ export const SITE_TITLE: string | Multilingual = {
 };
 
 export const SITE_DESCRIPTION: string | Multilingual = {
-	en: "A starter template for Astro with i18n support.",
-	es: "Descripción del sitio",
+	en: "A comic by Thannia Blanchet",
+	es: "Un comic por Thannia Blanchet",
 };
 
 export const X_ACCOUNT: string | Multilingual = "@psephopaiktes";
