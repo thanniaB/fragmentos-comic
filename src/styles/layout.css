@@ -10,3 +10,9 @@
 	top: 100vh;
 	margin-block-start: calc(var(--sp-l) * 2);
 }
+
+main {
+	    background-color: var(--color-base);
+		    padding: var(--sp-m);
+
+}

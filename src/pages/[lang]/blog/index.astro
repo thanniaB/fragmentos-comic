@@ -1,6 +1,7 @@
 ---
 import { LOCALES, useTranslations, type Lang } from "@/i18n";
 import Layout from "@/layouts/Base.astro";
+import { Image } from "astro:assets";
 import { getCollection } from "astro:content";
 import PageHeadline from "@/components/PageHeadline.astro";
 
@@ -24,25 +25,38 @@ export const getStaticPaths = () =>
 
 <Layout {title}>
   <PageHeadline {title} />
-  <ul>
-    {
-      posts.map((post) => {
-        const [, ...id] = post.id.split("/");
-        return (
-          <li>
-            <a href={`/${locale}/blog/${id.join("/")}/`}>
-              <h2>{post.data.title}</h2>
-            </a>
-          </li>
-        );
-      })
-    }
-  </ul>
+    <ul>
+      {
+        posts.map((post) => {
+          const [, ...id] = post.id.split("/");
+          return (
+            <li>
+              <a href={`/${locale}/blog/${id.join("/")}/`}>
+                {post.data.title}
+              </a>
+              {post.data.preview && (<Image src={post.data.preview} alt="preview image" class="preview-image" />)}
+            </li>);
+        })
+      }
+    </ul>
 </Layout>
 
 <style>
   ul {
+    position: relative;
     max-width: 800px;
     margin: var(--sp-s) auto;
+  }
+
+  a:hover + .preview-image {
+    visibility: visible;
+  }
+
+  .preview-image {
+    width: 300px;
+    visibility: hidden;
+    position: absolute;
+    top: var(--sp-xs);
+    right: var(--sp-m);
   }
 </style>
