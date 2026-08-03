@@ -1,0 +1,28 @@
+---
+interface Props {
+    name: string;
+    imageUrl: string;
+  description: string;
+}
+
+const { name, imageUrl, description } = Astro.props;
+---
+
+<div class="character-profile">
+    <img src={imageUrl}>
+    <div>
+        <h2>{name}</h2>
+        <p>{description}</p>
+    </div>    
+</div>
+
+<style>
+    .character-profile {
+        display: flex;
+        margin-bottom: var(--sp-s);
+
+        img {
+            margin-inline-end: var(--sp-xs);
+        }
+    }
+</style>

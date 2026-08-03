@@ -5,6 +5,7 @@ description: "Reference for the story's universe"
 ---
 import PageHeadline from "@/components/PageHeadline.astro";
 import { SITE_TITLE } from "@/consts";
+import Character from "@/components/Character.astro"
 
 <PageHeadline title={frontmatter.title} />
 
@@ -16,41 +17,56 @@ Voy a ir llenando esta página con lo que vaya saliendo conforme progrese la his
 
 # Razas
 ## Humanos
-Humans as we know them
+Humanos como nosotros, viven en ranchos, pueblos y ciudades, tienen festivales, escuela y algo de tecnología, no usan nada de magia.
 ## Gente Pequeña
-Like humans but half the size
+Físicamente igual a los humanos pero la mitad del tamaño, su cocina es considerada la mejor así que muchos viajan a mercados
+y festivales para venderla, su uso de magia es mínimo.
 ## Gente Tiburón
-Like zoras
+Nativos de la costa e islas, altos con cabeza de tiburón y aletas, pueden viajar por tierra gracias a los artefactos mágicos que fabrican, 
+los cuales también venden a las demás razas. Usan magia para sus artefactos y también para fines shamánicos, además de ser muy buenos
+guías de turista para sus playas.
 ## Gente Puma
-Mountain lions, like khajiit
+Descendientes de pumas y gatos monteses, viven aislados en sus comunidades autosuficientes con un código de diciplina estricto. No 
+usan magia como parte de sus principios.
 ## Gente Venado
-Tall people with deer heads, feel the elven trope
+Con cuerpo de humano y cabeza de venado, son los principales y más poderosos usuarios de magia, pero son muy celosos de su conocimiento.
 ## Gente Águila
-Americans
+Descendientes de águilas, viven en lo alto del cañón pero no forman ningún tipo de pueblo o comunidad, ya que pueden volar a donde quieran
+cuando necesitan algo.
 
 # Otros grupos, criaturas y organizaciones
 ## Ejército Humano
-evil
+Organización designada de proteger a los humanos de cualquier amenaza externa y mantener el orden. Visten de negro,
+el peor color para usar bajo el sol, para demostrar su fuerza y que no les da miedo el calor.
 ## Los Coralillos
-good
+<i>[Más información más adelante]</i>
 ## Monstruos
-They explode
+<i>[Más información más adelante]</i>
 
 # Personajes
-## Arb 
-Sniper
-## Sahara 
-sorcerer
-## Taylor
-rouge
-## Marlene
-normal
-## Alexis
-middle brother
-## Toby 
-little brother
-## Miss Rosy
-mom
+<Character 
+    imageUrl="https://placehold.co/100x120" 
+    name="Marlene" 
+    description="Apunto de terminar la preparatoria, siente mucha presión por elegir una carrera pero nada le interesa en particular." 
+/>
+
+<Character 
+    imageUrl="https://placehold.co/100x120" 
+    name="Alexis" 
+    description="Hermano menor de Marlene, desmadroso y le encantan los cuetes." 
+/>
+
+<Character 
+    imageUrl="https://placehold.co/100x120" 
+    name="Toby" 
+    description="El hermanito menor de Marlene y Alexis, adorable y se emociona fácil." 
+/>
+
+<Character 
+    imageUrl="https://placehold.co/100x120" 
+    name="Miss Rosy" 
+    description="Mamá de Marlene, Alexis y Toby, es una maestra bien conocida y querida en la comunidad." 
+/>
 
 # Mapa
 <div class="question-marks">???</div>

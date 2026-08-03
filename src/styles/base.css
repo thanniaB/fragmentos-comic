@@ -59,10 +59,6 @@ label {
 	line-height: 1.4;
 }
 
-p {
-	margin-block-start: 0.8em;
-}
-
 p a {
 	color: var(--color-accent);
 	text-decoration: underline;
