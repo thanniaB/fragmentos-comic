@@ -34,6 +34,21 @@ const { title, description } = Astro.props.frontmatter || Astro.props;
     .content {
       max-width: 800px;
       margin: var(--sp-m) auto 0;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .about-image {
+      p {
+
+      display: flex;
+      justify-content: center;
+
+      }
+      img {
+        width: 50%;
+      }
+
     }
 
     .note {

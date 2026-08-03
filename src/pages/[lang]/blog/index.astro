@@ -59,4 +59,17 @@ export const getStaticPaths = () =>
     top: var(--sp-xs);
     right: var(--sp-m);
   }
+
+  @media (max-width: 725px) {
+    ul {
+      text-align: center;
+    }
+    
+    li {
+      line-height: 3rem;
+    }
+    .preview-image {
+     display: none;
+    }
+  }
 </style>
