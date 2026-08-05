@@ -6,6 +6,11 @@ description: "Referencias sobre el universo"
 import PageHeadline from "@/components/PageHeadline.astro";
 import { SITE_TITLE } from "@/consts";
 import Character from "@/components/Character.astro"
+import marleneImg from "@/assets/characters/marlene.png";
+import alexisImg from "@/assets/characters/alexis.png";
+import tobyImg from "@/assets/characters/toby.png";
+import mamaImg from "@/assets/characters/mama.png";
+import { Image } from "astro:assets";
 
 <PageHeadline title={frontmatter.title} />
 
@@ -46,25 +51,25 @@ the worst color to use under the sun, to show strenght and that they won't be in
 
 # Characters
 <Character 
-    imageUrl="../../assets/characters/marlene.png" 
+    imageSrc={marleneImg.src}
     name="Marlene" 
     description="About to finish high school, she feels pressured to choose a career but isn't particularly interested in anything." 
 />
 
 <Character 
-    imageUrl="/../../assets/characters/alexis.png" 
+    imageSrc={alexisImg.src}
     name="Alexis" 
     description="Marlene's younger brother, unruly and loves fireworks." 
 />
 
 <Character 
-    imageUrl="../../assets/characters/toby.png" 
+    imageSrc={tobyImg.src}
     name="Toby" 
     description="Marlene and Alexis' youngest brother, adorable and easy to get excited." 
 />
 
 <Character 
-    imageUrl="../../assets/characters/mama.png" 
+    imageSrc={mamaImg.src}
     name="Miss Rosy" 
     description="Marlene, Alexis and Toby's mom, a teacher well-known in the community." 
 />

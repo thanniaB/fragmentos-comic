@@ -1,19 +1,19 @@
 ---
 interface Props {
     name: string;
-    imageUrl: string;
-  description: string;
+    imageSrc: any;
+    description: string;
 }
 
-const { name, imageUrl, description } = Astro.props;
+const { name, imageSrc, description } = Astro.props;
 ---
 
 <div class="character-profile">
-    <img src={imageUrl}>
+    <img src={imageSrc} />
     <div>
         <h2>{name}</h2>
         <p>{description}</p>
-    </div>    
+    </div>
 </div>
 
 <style>

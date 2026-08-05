@@ -5,6 +5,7 @@ import Footer from "@/components/Footer.astro";
 import Header from "@/components/Header.astro";
 import LocaleHtmlHead from "@/components/i18n/LocaleHtmlHead.astro";
 import LocaleSuggest from "@/components/i18n/LocaleSuggest.astro";
+import {Font} from "astro:assets";
 
 import { SITE_TITLE, SITE_DESCRIPTION, X_ACCOUNT } from "@/consts";
 import { useTranslations, LOCALES, getLocalePaths, type Lang } from "@/i18n";
@@ -40,6 +41,7 @@ const localeDescription = description || t(SITE_DESCRIPTION);
     <meta name="description" content={localeDescription} />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="sitemap" href="/sitemap-index.xml" />
+    <Font cssVariable="--font-piston-black" />
     <meta name="generator" content={Astro.generator} />
     {
       getLocalePaths(Astro.url).map((props) => (

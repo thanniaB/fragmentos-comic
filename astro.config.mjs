@@ -1,6 +1,6 @@
 import mdx from '@astrojs/mdx';
 import sitemap from '@astrojs/sitemap';
-import { defineConfig } from 'astro/config';
+import { defineConfig, fontProviders } from 'astro/config';
 import { DEFAULT_LOCALE_SETTING, LOCALES_SETTING } from './src/locales';
 
 // https://astro.build/config
@@ -27,4 +27,16 @@ export default defineConfig({
       },
     })
   ],
+  fonts: [{
+    provider: fontProviders.local(),
+    name: "PistonBlack",
+    cssVariable: "--font-piston-black",
+    options: {
+      variants: [{
+        src: ['./src/assets/fonts/PistonBlack-Regular.ttf'],
+        weight: 'normal',
+        style: 'normal'
+      }]
+    }
+  }]
 });

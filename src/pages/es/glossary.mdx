@@ -6,6 +6,11 @@ description: "Reference for the story's universe"
 import PageHeadline from "@/components/PageHeadline.astro";
 import { SITE_TITLE } from "@/consts";
 import Character from "@/components/Character.astro"
+import marleneImg from "@/assets/characters/marlene.png";
+import alexisImg from "@/assets/characters/alexis.png";
+import tobyImg from "@/assets/characters/toby.png";
+import mamaImg from "@/assets/characters/mama.png";
+import { Image } from "astro:assets";
 
 <PageHeadline title={frontmatter.title} />
 
@@ -45,25 +50,25 @@ el peor color para usar bajo el sol, para demostrar su fuerza y que no les da mi
 
 # Personajes
 <Character 
-    imageUrl="https://placehold.co/100x120" 
+    imageSrc={marleneImg.src} 
     name="Marlene" 
     description="Apunto de terminar la preparatoria, siente mucha presión por elegir una carrera pero nada le interesa en particular." 
 />
 
 <Character 
-    imageUrl="https://placehold.co/100x120" 
+    imageSrc={alexisImg.src} 
     name="Alexis" 
     description="Hermano menor de Marlene, desmadroso y le encantan los cuetes." 
 />
 
 <Character 
-    imageUrl="https://placehold.co/100x120" 
+    imageSrc={tobyImg.src} 
     name="Toby" 
     description="El hermanito menor de Marlene y Alexis, adorable y se emociona fácil." 
 />
 
 <Character 
-    imageUrl="https://placehold.co/100x120" 
+    imageSrc={mamaImg.src} 
     name="Maestra Rosy" 
     description="Mamá de Marlene, Alexis y Toby, es una maestra bien conocida y querida en la comunidad." 
 />
