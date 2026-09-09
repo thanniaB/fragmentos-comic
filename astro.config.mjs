@@ -6,6 +6,10 @@ import { DEFAULT_LOCALE_SETTING, LOCALES_SETTING } from './src/locales';
 // https://astro.build/config
 export default defineConfig({
   site: 'https://thornsofadragon.netlify.app', // Set your site's URL
+  redirects: {
+    "https://www.thornsofadragon.com": "https://thornsofadragon.netlify.app/en/",
+    "https://www.fragmentosdedragon.com": "https://thornsofadragon.netlify.app/es/"
+  },
   i18n: {
     defaultLocale: DEFAULT_LOCALE_SETTING,
     locales: Object.keys(LOCALES_SETTING),
