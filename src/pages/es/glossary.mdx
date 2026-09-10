@@ -10,6 +10,8 @@ import marleneImg from "@/assets/characters/marlene.png";
 import alexisImg from "@/assets/characters/alexis.png";
 import tobyImg from "@/assets/characters/toby.png";
 import mamaImg from "@/assets/characters/mama.png";
+import romanImg from "@/assets/characters/roman.png";
+import xochitlImg from "@/assets/characters/xochitl.png";
 import { Image } from "astro:assets";
 
 <PageHeadline title={frontmatter.title} />
@@ -22,10 +24,10 @@ Voy a ir llenando esta página con lo que vaya saliendo conforme progrese la his
 
 # Razas
 ## Humanos
-Humanos como nosotros, viven en ranchos, pueblos y ciudades, tienen festivales, escuela y algo de tecnología, no usan nada de magia.
+Humanos como nosotros, viven en ranchos, pueblos y ciudades, tienen festivales, escuela y algo de tecnología, no usan nada de magia. La gente pequeña los llama "la gente alta".
 ## Gente Pequeña
 Físicamente igual a los humanos pero la mitad del tamaño, su cocina es considerada la mejor así que muchos viajan a mercados
-y festivales para venderla, su uso de magia es mínimo.
+y festivales para venderla, su uso de magia es mínimo. Entre ellos mismos simplemente son "gente".
 ## Gente Tiburón
 Nativos de la costa e islas, altos con cabeza de tiburón y aletas, pueden viajar por tierra gracias a los artefactos mágicos que fabrican, 
 los cuales también venden a las demás razas. Usan magia para sus artefactos y también para fines shamánicos, además de ser muy buenos
@@ -71,6 +73,18 @@ el peor color para usar bajo el sol, para demostrar su fuerza y que no les da mi
     imageSrc={mamaImg.src} 
     name="Maestra Rosy" 
     description="Mamá de Marlene, Alexis y Toby, es una maestra bien conocida y querida en la comunidad." 
+/>
+
+<Character 
+    imageSrc={romanImg.src}
+    name="Roman" 
+    description="Una persona puma, es un vendedor de queso ambulante perpetuamente aterrado de su mamá, quien se va a enojar mucho si regresa a casa sin el queso o el dinero del queso." 
+/>
+
+<Character 
+    imageSrc={xochitlImg.src}
+    name="Xochitl" 
+    description="Es una persona pequeña cuyo objetivo es crear el pan más delicioso del mundo. " 
 />
 
 # Mapa
