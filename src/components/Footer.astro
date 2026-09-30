@@ -24,6 +24,26 @@ import { Image } from "astro:assets";
     </ul>
   </div>
 
+  {
+    t({
+      es: "¿Quieres saber cuando subo el siguiente capítulo? ",
+      en: "Don't want to miss when I upload a new chapter? ",
+    })
+  }
+  <a
+    data-formkit-toggle="34a383ef03"
+    href="https://thorns-of-a-dragon.kit.com/34a383ef03"
+  >
+    <span>
+      {
+        t({
+          es: "Suscríbete a la mailing list",
+          en: "Subscribe to the mailing list!",
+        })
+      }
+    </span>
+  </a>
+
   <a class="copy" href="https://thanniab.github.io/" target="_blank" dir="ltr">
     © Thannia Blanchet {new Date().getFullYear()}.
   </a>
