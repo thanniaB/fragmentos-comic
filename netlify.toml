@@ -4,4 +4,13 @@
 
 [[redirects]]
   from = "https://www.fragmentosdedragon.com/"
-  to = "https://thornsofadragon.netlify.app/es/"
+  to = "https://www.fragmentosdedragon.com/es/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "https://fragmentosdedragon.com/"
+  to = "https://fragmentosdedragon.com/es/"
+  status = 301
+  force = true
+
