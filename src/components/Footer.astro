@@ -2,6 +2,7 @@
 import { useTranslations, type Lang } from "@/i18n";
 const t = useTranslations(Astro.currentLocale as Lang);
 import ngLogo from "@/assets/ng_logo.png";
+import wtLogo from "@/assets/webtoon_logo.png";
 import { Image } from "astro:assets";
 ---
 
@@ -16,10 +17,23 @@ import { Image } from "astro:assets";
   </a>
 
   <div class="also-on">
-    Find it also on
+    {
+      t({
+        es: "También en...  ",
+        en: "Find it also on "
+      })
+    }
     <ul>
       <a href="https://pinkskull.newgrounds.com/" target="_blank">
         <Image src={ngLogo} alt="Newgrounds" />
+      </a>
+      <a href={
+      t({
+        en: "https://www.webtoons.com/en/canvas/thorns-of-a-dragon/list?title_no=1184675",
+        es: "https://www.webtoons.com/es/canvas/fragmentos-de-drag%C3%B3n/list?title_no=1186185"
+      })
+      } target="_blank">
+        <Image src={wtLogo} alt="Webtoon" />
       </a>
     </ul>
   </div>
@@ -31,8 +45,13 @@ import { Image } from "astro:assets";
     })
   }
   <a
-    data-formkit-toggle="34a383ef03"
-    href="https://thorns-of-a-dragon.kit.com/34a383ef03"
+    target="_blank"
+    href={
+      t({
+        en: "https://thorns-of-a-dragon.kit.com/632096fdfa",
+        es: "https://thorns-of-a-dragon.kit.com/82615d9233"
+      })
+    }
   >
     <span>
       {
